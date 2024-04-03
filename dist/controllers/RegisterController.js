@@ -20,7 +20,8 @@ class RegisterController {
             const { phoneNumber, cpf, protocol, projectId } = req.body;
             if (!phoneNumber || !cpf || !protocol || !projectId) {
                 return res.status(http_status_codes_1.StatusCodes.BAD_REQUEST).json({
-                    message: 'Preencha todos os campos'
+                    message: 'Preencha todos os campos',
+                    body: req.body
                 });
             }
             const registerExists = yield Register_1.default.findOne({ protocol: protocol });

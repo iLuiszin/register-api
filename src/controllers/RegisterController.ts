@@ -10,7 +10,8 @@ export default class RegisterController {
 
     if (!phoneNumber || !cpf || !protocol || !projectId) {
       return res.status(StatusCodes.BAD_REQUEST).json({
-        message: 'Preencha todos os campos'
+        message: 'Preencha todos os campos',
+        body: req.body
       })
     }
 
